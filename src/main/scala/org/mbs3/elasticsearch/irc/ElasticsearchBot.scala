@@ -16,7 +16,7 @@ object ElasticsearchBot extends App {
 					.addAutoJoinChannel("#martin-elasticsearch-test")
 					.addAutoJoinChannel("#gatorlug")
 					.addAutoJoinChannel("#archlinux")
-					//.addListener(new LogEverythingListener)
+					.addListener(new LogEverythingListener)
 					.addListener(new CommandListener)
 					.addListener(new ElasticsearchListener("elasticsearch", "localhost", 9300))
 					.buildConfiguration

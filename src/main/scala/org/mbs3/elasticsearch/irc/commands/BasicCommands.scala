@@ -21,6 +21,10 @@ object GoodbyeCommand extends IrcCommand[PircBotX] {
     !pattern.findFirstIn(cmd).isEmpty
   }
   def handle(cmd: String, event: GenericMessageEvent[PircBotX]) : Unit = {
+    if(!event.getUser().getNick().equals("smithmb"))
+      return
+    
+    println("Exiting by request " + event)
     event.respond("Goodbye")
     val bot = event.getBot()
     bot.stopBotReconnect()
